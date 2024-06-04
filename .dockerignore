@@ -1,0 +1,13 @@
+/.github
+/.idea
+/build
+/vendor
+/.dockerignore
+/.gitattributes
+/.gitignore
+/CHANGELOG.md
+/CONTRIBUTING.md
+/Dockerfile
+/LICENSE
+/phpunit.xml
+/README.md

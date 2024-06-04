@@ -1,0 +1,6 @@
+.idea
+.DS_Store
+build
+docs
+vendor
+.php-cs-fixer.cache

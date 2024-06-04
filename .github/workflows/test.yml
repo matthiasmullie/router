@@ -1,0 +1,23 @@
+name: test-suite
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Test PHP 8.3
+        run: make coverage PHP=8.3
+      - name: Test PHP 8.2
+        run: make coverage PHP=8.2
+      - name: Test PHP 8.1
+        run: make coverage PHP=8.1
+      - uses: codecov/codecov-action@v4.0.1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: build
