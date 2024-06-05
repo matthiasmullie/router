@@ -121,9 +121,9 @@ class Router extends Group implements RequestHandlerInterface
                     ['Allow' => implode(', ', array_unique($allowed))],
                 );
             case FastRoute\Dispatcher::FOUND:
-                [, $handler] = $routeInfo;
+                [, $handler, $variables] = $routeInfo;
 
-                return $handler->handle($request);
+                return $handler->handle($request->withAttribute('variables', $variables));
         }
 
         throw new Exception(
