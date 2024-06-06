@@ -78,6 +78,15 @@ class Router extends Group implements RequestHandlerInterface
         return $response;
     }
 
+    public function output(ResponseInterface $response): void
+    {
+        http_response_code($response->getStatusCode());
+        foreach ($response->getHeaders() as $name => $values) {
+            header(sprintf('%s: %s', $name, $response->getHeaderLine($name)), false);
+        }
+        echo $response->getBody();
+    }
+
     /**
      * @param Route[] $routes
      */

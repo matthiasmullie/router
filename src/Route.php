@@ -60,13 +60,4 @@ class Route extends MiddlewareContainer implements RequestHandlerInterface
 
         return $this->handler->handle($request);
     }
-
-    public function output(ResponseInterface $response): void
-    {
-        http_response_code($response->getStatusCode());
-        foreach ($response->getHeaders() as $name => $values) {
-            header(sprintf('%s: %s', $name, $response->getHeaderLine($name)), false);
-        }
-        echo $response->getBody();
-    }
 }
