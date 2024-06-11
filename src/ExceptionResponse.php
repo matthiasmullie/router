@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace MatthiasMullie\Router;
 
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 
@@ -15,7 +16,7 @@ class ExceptionResponse implements ExceptionResponseInterface
         readonly private LoggerInterface $logger = new NullLogger(),
     ) {}
 
-    public function handle(\Exception $exception): ResponseInterface
+    public function handle(\Exception $exception, ServerRequestInterface $request): ResponseInterface
     {
         if (!$exception instanceof Exception) {
             $exception = new Exception(

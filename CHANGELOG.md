@@ -1,6 +1,11 @@
 # Changelog
 
 
+## [1.1.0] - 2024-06-11
+### Added
+- `ExceptionResponseInterface::handle` now also receives the `ServerRequestInterface` instance as argument
+
+
 ## [1.0.3] - 2024-06-06
 ### Added
 - Moved `output` from Route to Router, where it was supposed to be
@@ -25,3 +30,4 @@
 [1.0.1]: https://github.com/matthiasmullie/router/compare/1.0.0...1.0.1
 [1.0.2]: https://github.com/matthiasmullie/router/compare/1.0.1...1.0.2
 [1.0.3]: https://github.com/matthiasmullie/router/compare/1.0.2...1.0.3
+[1.1.0]: https://github.com/matthiasmullie/router/compare/1.0.3...1.1.0

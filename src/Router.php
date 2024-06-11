@@ -24,7 +24,7 @@ class Router extends Group implements RequestHandlerInterface
         // default to not handling exceptions, but throwing them again
         if (!isset($this->exceptionResponse)) {
             $this->exceptionResponse = new class () implements ExceptionResponseInterface {
-                public function handle(\Exception $exception): ResponseInterface
+                public function handle(\Exception $exception, ServerRequestInterface $request): ResponseInterface
                 {
                     throw $exception;
                 }
@@ -61,7 +61,7 @@ class Router extends Group implements RequestHandlerInterface
         try {
             $response = $this->dispatch($request);
         } catch (\Exception $exception) {
-            $response = $this->exceptionResponse->handle($exception);
+            $response = $this->exceptionResponse->handle($exception, $request);
         }
 
         if (!$this->logger instanceof NullLogger) {
