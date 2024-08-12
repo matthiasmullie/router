@@ -1,6 +1,11 @@
 # Changelog
 
 
+## [1.2.0] - 2024-08-12
+### Fixed
+- Fixed case of `StatusCodes::ContentTooLarge`
+
+
 ## [1.1.0] - 2024-06-11
 ### Added
 - `ExceptionResponseInterface::handle` now also receives the `ServerRequestInterface` instance as argument
@@ -31,3 +36,4 @@
 [1.0.2]: https://github.com/matthiasmullie/router/compare/1.0.1...1.0.2
 [1.0.3]: https://github.com/matthiasmullie/router/compare/1.0.2...1.0.3
 [1.1.0]: https://github.com/matthiasmullie/router/compare/1.0.3...1.1.0
+[1.2.0]: https://github.com/matthiasmullie/router/compare/1.1.0...1.2.0

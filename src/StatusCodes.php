@@ -40,7 +40,7 @@ enum StatusCodes: int
     case Gone = 410;
     case LengthRequired = 411;
     case PreconditionFailed = 412;
-    case ContentTooLARGE = 413;
+    case ContentTooLarge = 413;
     case UriTooLong = 414;
     case UnsupportedMediaType = 415;
     case RangeNotSatisfiable = 416;
