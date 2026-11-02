@@ -85,7 +85,7 @@ echo $response->getBody(); // outputs: {"message":"Hello world"}
 
 ### Groups
 
-For convenient, routes with the same prefix can be bundled together in a group.
+For convenience, routes with the same prefix can be bundled together in a group.
 
 Like so:
 
